@@ -11,8 +11,12 @@ The t-shirt API is a system api for operations on the **AWS-Mysql Data base**.
 
 
 ### Amazon DB connection:
+
 -**Endpoint:** database-mule1.cqnnno7itnen.us-east-1.rds.amazonaws.com
+
 -**Port:** 3306
+
 -**UserName:** root
+
 -**PW:** Joakoss1995!
 
