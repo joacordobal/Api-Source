@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
-	<artifactId>mule-project-final</artifactId>
+	<artifactId>muleproject-tshirt</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
-	<name>mule-project-final</name>
+	<name>muleproject-tshirt</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -74,7 +74,7 @@
 		<dependency>
 			<groupId>498dd6ba-5844-49b5-be8f-1d3794d99b2d</groupId>
 			<artifactId>t-shirt</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.3</version>
 			<classifier>raml</classifier>
 			<type>zip</type>
 		</dependency>

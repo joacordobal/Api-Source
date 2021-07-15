@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mule xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd ">
-    <apikit:config name="t-shirt-config" api="resource::498dd6ba-5844-49b5-be8f-1d3794d99b2d:t-shirt:1.0.1:raml:zip:t-shirt.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
+    <apikit:config name="t-shirt-config" api="resource::498dd6ba-5844-49b5-be8f-1d3794d99b2d:t-shirt:1.0.3:raml:zip:t-shirt.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
     <flow name="t-shirt-main">
         <http:listener config-ref="HTTP_Listener_config" path="/api/*">
             <http:response statusCode="#[vars.httpStatus default 200]">
@@ -120,16 +120,22 @@ output application/json
             </on-error-propagate>
         </error-handler>
     </flow>
+    <flow name="put:\apiportal\updateinventory:application\json:t-shirt-config">
+		<flow-ref doc:name="Flow Reference" doc:id="98528918-aecc-4a79-b1e5-fc4b6b22d90e" name="Copy_of_updateinventory"/>
+    </flow>
     <flow name="get:\apiportal\getinventory:t-shirt-config">
-		<flow-ref doc:name="Flow Reference" doc:id="17631740-d7a8-4898-954f-fb74f3112883" name="Copy_of_Get-InventoryDB"/>
+		<flow-ref doc:name="Flow Reference" doc:id="905a5389-5b6e-4907-ba9a-b63410af95aa" name="Copy_of_Copy_of_Get-InventoryDB"/>
     </flow>
     <flow name="get:\apiportal\sizes:t-shirt-config">
-		<flow-ref doc:name="Flow Reference" doc:id="2e2b5244-ceef-401f-a3ff-426aff7f5def" name="Copy_of_Get-InventoryDB-size"/>
+		<flow-ref doc:name="Flow Reference" doc:id="d35f429b-6196-4237-864e-a031e28aa1d3" name="Copy_of_Copy_of_Get-InventoryDB-size"/>
     </flow>
     <flow name="get:\apiportal\sku:t-shirt-config">
-		<flow-ref doc:name="Flow Reference" doc:id="b3109d19-b1f4-4cad-acaa-c96d686715f1" name="Copy_of_Get-InventoryDB-sku"/>
+		<flow-ref doc:name="Flow Reference" doc:id="625dba48-8ecd-47d8-adcb-e52bc51cf6f0" name="Copy_of_Copy_of_Get-InventoryDB-sku"/>
     </flow>
     <flow name="get:\apiportal\stock:t-shirt-config">
-		<flow-ref doc:name="Flow Reference" doc:id="92cd72d6-2595-4f6d-9a4a-8018c0f0bb25" name="Copy_of_Get-Stock"/>
+		<flow-ref doc:name="Flow Reference" doc:id="5c5b0246-1fc6-402e-9392-05e2588acf26" name="Copy_of_Copy_of_Get-Stock"/>
+    </flow>
+	<flow name="post:\apiportal\postinventory:application\json:t-shirt-config">
+		<flow-ref doc:name="Flow Reference" doc:id="d27a025b-5a37-4e15-9313-d69f14b6e1cf" name="Copy_of_postinventory"/>
     </flow>
 </mule>
